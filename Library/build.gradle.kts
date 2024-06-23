@@ -35,14 +35,14 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 }
 
-afterEvaluate{
-    publishing{
-        publications{
-            create<MavenPublication>("release"){
-                groupId = "com.github.LucasFerreira9"
-                artifactId = "BaseAsyncTask"
-                version = "1.0.0"
-            }
+
+publishing{
+    publications{
+        create<MavenPublication>("release"){
+            groupId = "com.github.LucasFerreira9"
+            artifactId = "BaseAsyncTask"
+            version = "1.0.0"
         }
     }
 }
+
