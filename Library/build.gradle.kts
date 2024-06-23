@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
+    id("maven-publish")
 }
 
 android {
@@ -32,4 +33,16 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+}
+
+afterEvaluate{
+    publishing{
+        publications{
+            create<MavenPublication>("release"){
+                groupId = "com.github.LucasFerreira9"
+                artifactId = "BaseAsyncTask"
+                version = "1.0.0"
+            }
+        }
+    }
 }
