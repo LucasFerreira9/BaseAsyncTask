@@ -24,6 +24,13 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 dependencies {
@@ -38,8 +45,11 @@ dependencies {
 
 publishing{
     publications{
-        create<MavenPublication>("release"){
-            groupId = "com.github.LucasFerreira9"
+        register<MavenPublication>("release"){
+            afterEvaluate{
+                from(components["release"])
+            }
+            groupId = "LucasFerreira9"
             artifactId = "BaseAsyncTask"
             version = "1.0.0"
         }
