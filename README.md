@@ -26,7 +26,7 @@ dependencyResolutionManagement {
 2. Add the dependency
 ```
 dependencies {
-    implementation 'com.github.LucasFerreira9:BaseAsyncTask_Android:Tag'
+    implementation 'com.github.LucasFerreira9:BaseAsyncTask:1.0.0'
 }
 ```
 
