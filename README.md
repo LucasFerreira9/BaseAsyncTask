@@ -34,7 +34,7 @@ dependencies {
 
 1. fetching products and updating UI views. 
 ```
-BaseAsyncTask myTask = new BaseAsyncTask(
+BaseAsyncTask<List<Product>> myTask = new BaseAsyncTask<>(
   ()->{
       // Network operation
       List<products> products = fetchProducts();
